@@ -1,7 +1,7 @@
 <!-- <p>{{tarskeresok|json}}</p> -->
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
-    @for(p of tarskeresok;track p.image){
+    @for(p of tarskeresok|search:"";track p.image){
         <div class="col">
             <div class="card h-100">
                 <!-- <img [src]="p.image" class="card-img-top" [alt]="p.name"> -->
