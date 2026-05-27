@@ -1,7 +1,20 @@
 <!-- <p>{{tarskeresok|json}}</p> -->
+
+<p>Rendezés</p>
+<select  [(ngModel)]="mitRendezek" class="form-select form-select-lg mb-3" aria-label="Large select example">
+    @for(m of rendezes;track m.value){
+        <option [value]="m.value">{{m.text}}</option>
+    }
+</select>
+  <!-- <option value="1"  [selected]="true">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option> -->
+
+
+
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
-    @for(p of tarskeresok|search:"";track p.image){
+    @for(p of (tarskeresok|search:keresendo())|sort:rendezes[mitRendezek].key:rendezes[mitRendezek].sort;track p.image){
         <div class="col">
             <div class="card h-100">
                 <!-- <img [src]="p.image" class="card-img-top" [alt]="p.name"> -->
